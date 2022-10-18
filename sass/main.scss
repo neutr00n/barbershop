@@ -1,0 +1,17 @@
+@import './utilits/vars';
+@import './utilits/placeholders';
+@import './utilits/mixins';
+@import './utilits/common';
+
+@import './base/reset';
+
+@import './components/header';
+@import './components/hero';
+@import './components/about-us';
+@import './components/prices';
+@import './components/our-choice';
+@import './components/our-barbers';
+@import './components/portfolio';
+@import './components/online-booking';
+@import './components/contacts';
+@import './components/footer';

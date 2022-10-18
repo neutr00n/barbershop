@@ -1,0 +1,92 @@
+.our-barbers {
+  padding: 84px 0;
+
+  background-color: getColor('bgc-color-come-item');
+
+  @include breakpoint(tablet) {
+    padding: 100px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 120px 0;
+  }
+
+  .container {
+    @include breakpoint(tablet-only) {
+      padding: 0 159px;
+    }
+  }
+
+  &__pretitle {
+    color: getColor('primary-title-color');
+  }
+
+  &__title {
+    margin-bottom: 44px;
+
+    font-size: 42px;
+    line-height: 1.17;
+  }
+
+  &__list {
+    @include breakpoint(desktop) {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    @include breakpoint(tablet-max) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__wrapper {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+    line-height: 1.4;
+
+    color: getColor('primary-title-color');
+  }
+
+  &__position {
+    margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 1.36;
+
+    color: getColor('accent-color');
+  }
+
+  &__social-list {
+    @include flex(flex, center);
+    gap: 10px;
+  }
+
+  &__social-link {
+    @include flex(flex, center, center);
+
+    width: 44px;
+    height: 44px;
+
+    background-color: getColor('primary-bg-color');
+    border-radius: 50%;
+  }
+
+  &__social-icon {
+    fill: getColor('primary-title-color');
+
+    transition: fill $transition-duration $timing-function;
+
+    .our-barbers__social-link:hover &,
+    .our-barbers__social-link:focus & {
+      fill: getColor('accent-color');
+    }
+  }
+}

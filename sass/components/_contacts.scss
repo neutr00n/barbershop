@@ -1,0 +1,97 @@
+.contacts {
+  padding: 84px 0;
+
+  @include breakpoint(tablet) {
+    padding: 100px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 130px 0 120px 100px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    font-family: $title-font;
+    font-size: 42px;
+    line-height: 1.17;
+    letter-spacing: 0.05em;
+    color: getColor('primary-bg-color');
+
+    @include breakpoint(mobile-max) {
+      text-align: center;
+    }
+  }
+
+  &__wrapper {
+    @include breakpoint(tablet-only) {
+      display: flex;
+    }
+  }
+
+  &__address {
+    margin-bottom: 44px;
+
+    font-style: normal;
+
+    @include breakpoint(tablet-only) {
+      margin: 0;
+      width: 330px;
+    }
+
+    @include breakpoint(desktop) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    @include flex(flex, flex-start, center);
+    font-size: 18px;
+    line-height: 1.67;
+
+    color: getColor('secondary-text-color');
+
+    transition: color $transition-duration $timing-function;
+
+    &--bold {
+      font-weight: 700;
+
+      @include breakpoint(tablet) {
+        max-width: 220px;
+      }
+    }
+
+    &--underlined {
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:focus {
+      color: getColor('accent-color');
+    }
+  }
+
+  &__icon {
+    margin-right: 16px;
+  }
+
+  &__inner {
+    @include breakpoint(tablet-only) {
+      margin-left: 30px;
+    }
+  }
+
+  &__pretitle {
+    color: getColor('primary-bg-color');
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.67;
+    color: getColor('secondary-text-color');
+  }
+}

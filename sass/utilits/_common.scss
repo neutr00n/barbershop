@@ -1,0 +1,57 @@
+body {
+  font-family: $primary-font;
+
+  letter-spacing: 0.02em;
+
+  color: getColor('primary-text-color');
+  background-color: getColor('primary-bg-color');
+}
+
+.container {
+  max-width: $mobile;
+  padding: 0 31px;
+  margin: 0 auto;
+
+  @include breakpoint(tablet) {
+    max-width: $tablet;
+    padding: 0 39px;
+  }
+  @include breakpoint(desktop) {
+    max-width: $desktop;
+    padding: 0 15px;
+  }
+}
+
+.title {
+  font-family: $title-font;
+  font-size: 28px;
+  line-height: 1.18;
+  letter-spacing: 0.05em;
+  color: getColor('primary-title-color');
+
+  @include breakpoint(desktop) {
+    font-size: 42px;
+    line-height: 1.17;
+  }
+}
+
+.pretitle {
+  @include flex(flex, flex-start, center);
+  margin-bottom: 20px;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+
+  color: getColor('pre-title-color');
+
+  &::before {
+    margin-right: 20px;
+    content: '';
+    width: 60px;
+    height: 1px;
+
+    background-color: currentColor;
+  }
+}

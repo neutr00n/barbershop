@@ -1,0 +1,101 @@
+.about-us {
+  padding: 84px 0;
+
+  @include breakpoint(tablet) {
+    padding: 100px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 120px 0;
+  }
+
+  .container {
+    @include breakpoint(tablet) {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include breakpoint(tablet) {
+      display: block;
+    }
+
+    @include breakpoint(desktop) {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__item:first-child {
+    @include breakpoint(tablet-max) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper {
+    @include breakpoint(tablet) {
+      margin-left: 30px;
+      max-width: 330px;
+    }
+
+    @include breakpoint(desktop) {
+      max-width: 470px;
+    }
+  }
+
+  &__pretitle {
+    color: getColor('primary-title-color');
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include breakpoint(mobile-max) {
+      max-width: 306px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 1.62;
+
+    @include breakpoint(tablet) {
+      font-size: 18px;
+      line-height: 1.67;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    font-size: 14px;
+    line-height: 1.86;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 77px;
+    }
+
+    @include breakpoint(desktop) {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__btn {
+    @extend %btn;
+
+    color: getColor('primary-title-color');
+
+    transition: color $transition-duration $timing-function,
+      background-color $transition-duration $timing-function;
+
+    &:hover,
+    &:focus {
+      color: getColor('primary-bg-color');
+      background-color: getColor('accent-color');
+    }
+  }
+}

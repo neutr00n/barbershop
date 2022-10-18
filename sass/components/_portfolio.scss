@@ -1,0 +1,47 @@
+.portfolio {
+  padding: 84px 0;
+
+  @include breakpoint(tablet) {
+    padding: 100px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 120px 0;
+  }
+
+  &__pretitle {
+    margin-bottom: 70px;
+
+    color: getColor('primary-title-color');
+
+    @include breakpoint(tablet) {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__list {
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: $indent;
+    }
+  }
+
+  &__item {
+    @include breakpoint(tablet) {
+      flex-basis: calc((100% - $indent * ($item - 1)) / $item);
+    }
+
+    @include breakpoint(desktop) {
+      $item: 4;
+      flex-basis: calc((100% - $indent * ($item - 1)) / $item);
+    }
+  }
+
+  &__item:not(:last-child) {
+    @include breakpoint(mobile-max) {
+      margin-bottom: 30px;
+    }
+  }
+}

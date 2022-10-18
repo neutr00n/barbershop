@@ -1,0 +1,28 @@
+$color: (
+  'primary-title-color': #303030,
+  'primary-text-color': #555555,
+  'secondary-text-color': #9da4bd,
+  'pre-title-color': rgba(157, 164, 189, 0.6),
+  'accent-color': #ff6c00,
+  'primary-bg-color': #ffffff,
+  'secondary-bg-color': #191c26,
+  'bgc-color-come-item': #f7f7f7,
+  'booking-text-color': rgba(157, 164, 189, 0.4),
+);
+
+@function getColor($key) {
+  @return map-get($color, $key);
+}
+
+$primary-font: 'Open Sans', sans-serif;
+$title-font: 'Raleway', sans-serif;
+
+$indent: 30px;
+$item: 2;
+
+$transition-duration: 250ms;
+$timing-function: linear;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;

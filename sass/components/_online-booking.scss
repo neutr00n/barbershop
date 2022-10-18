@@ -1,0 +1,184 @@
+.section-wrapper {
+  max-width: 1600px;
+  background-image: url(../images/contacts/contacts-tel.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  background-color: getColor('secondary-bg-color');
+
+  @include retina {
+    background-image: url(../images/contacts/contacts-tel@2x.png);
+  }
+
+  @include breakpoint(tablet) {
+    background-image: url(../images/contacts/contacts-tabl.png);
+
+    @include retina {
+      background-image: url(../images/contacts/contacts-tabl@2x.png);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    background-image: url(../images/contacts/contacts-desk.png);
+    background-size: 50% 100%;
+    background-position: right;
+
+    @include retina {
+      background-image: url(../images/contacts/contacts-desk@2x.png);
+    }
+  }
+
+  .container {
+    @include breakpoint(desktop) {
+      display: flex;
+    }
+  }
+}
+
+.online-booking {
+  padding: 84px 0;
+
+  @include breakpoint(tablet) {
+    padding: 100px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 130px 15px 120px 0;
+
+    width: 50%;
+  }
+
+  &__title {
+    margin-bottom: 44px;
+
+    font-family: $title-font;
+    font-size: 42px;
+    line-height: 1.17;
+    letter-spacing: 0.05em;
+    color: getColor('primary-bg-color');
+
+    @include breakpoint(mobile-max) {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__field {
+    margin-bottom: 44px;
+
+    position: relative;
+    display: block;
+
+    width: 100%;
+
+    &:nth-child(1) {
+      @include breakpoint(tablet) {
+        flex-basis: calc((100% - $indent * ($item - 1)) / $item);
+      }
+    }
+
+    &:nth-child(2) {
+      @include breakpoint(tablet) {
+        margin-left: 30px;
+        flex-basis: calc((100% - $indent * ($item - 1)) / $item);
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 24px;
+
+    color: getColor('primary-bg-color');
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid getColor('booking-text-color');
+    outline: none;
+
+    transition: border-color $transition-duration $timing-function;
+
+    &:focus {
+      border-color: getColor('primary-bg-color');
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 76px;
+
+    color: getColor('primary-bg-color');
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid getColor('booking-text-color');
+    outline: none;
+    resize: none;
+
+    transition: border-color $transition-duration $timing-function;
+
+    &:focus {
+      border-color: getColor('primary-bg-color');
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: getColor('booking-text-color');
+
+    transition: transform $transition-duration $timing-function,
+      color $transition-duration $timing-function;
+
+    .online-booking__input:focus + & {
+      transform: translateY(-100%);
+      color: getColor('primary-bg-color');
+    }
+
+    .online-booking__input:not(:placeholder-shown) + & {
+      transform: translateY(-100%);
+    }
+
+    .online-booking__textarea:focus + & {
+      transform: translateY(-100%);
+      color: getColor('primary-bg-color');
+    }
+
+    .online-booking__textarea:not(:placeholder-shown) + & {
+      transform: translateY(-100%);
+    }
+  }
+
+  &__btn {
+    @extend %btn;
+
+    width: 160px;
+    height: 40px;
+    text-align: center;
+
+    color: getColor('primary-bg-color');
+
+    transition: background-color $transition-duration $timing-function;
+
+    @include breakpoint(mobile-max) {
+      @include flex(flex, center);
+      margin: 0 auto;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: getColor('accent-color');
+    }
+  }
+}

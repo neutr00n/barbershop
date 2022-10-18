@@ -1,0 +1,122 @@
+.our-choice {
+  padding: 84px 0;
+
+  @include breakpoint(tablet) {
+    padding: 100px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 120px 0;
+  }
+
+  .container {
+    @include breakpoint(desktop) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__wrapper {
+    @include breakpoint(tablet-max) {
+      margin-bottom: 44px;
+    }
+
+    @include breakpoint(tablet) {
+      max-width: 500px;
+    }
+
+    @include breakpoint(desktop) {
+      margin-left: 130px;
+    }
+  }
+
+  &__pretitle {
+    color: getColor('primary-title-color');
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 41px;
+    line-height: 1.17;
+
+    @include breakpoint(desktop) {
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.67;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint(tablet) {
+      margin-left: 240px;
+    }
+
+    @include breakpoint(desktop) {
+      margin-left: 144px;
+    }
+  }
+
+  &__item {
+    padding: 20px 25px;
+    text-align: center;
+
+    flex-basis: calc((100% - $indent * ($item - 1)) / $item);
+
+    background-color: getColor('bgc-color-come-item');
+
+    @include breakpoint(tablet-only) {
+      padding: 20px 35px;
+    }
+
+    @include breakpoint(desktop) {
+      max-width: 170px;
+    }
+
+    &:nth-child(2n + 1) {
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(2n) {
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+  }
+
+  &__headline {
+    @include flex(flex, center, center);
+    margin-bottom: 6px;
+
+    font-size: 42px;
+    line-height: 1.36;
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    color: getColor('primary-title-color');
+  }
+
+  &__sup {
+    margin-left: 2px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.38;
+
+    color: getColor('accent-color');
+  }
+
+  &__description {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    text-align: center;
+
+    color: getColor('primary-title-color');
+  }
+}
